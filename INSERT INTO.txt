@@ -1,0 +1,17 @@
+1.The following SQL statement inserts a new record in the "Customers" table:
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Slobodan Zivic', 'Petar Petrovic', 'Strahinjica bana 6', 'Nis', '18000', 'Serbia');
+
+Did you notice that we did not insert any number into the CustomerID field?
+The CustomerID column is an auto-increment field and will be generated automatically when a new record is inserted into the table.
+
+=============================================================================================================================================================================
+
+2.The following SQL statement will insert a new record, but only insert data in the "CustomerName", "City", and "Country" columns (CustomerID will be updated automatically):
+
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Slobodan Zivic' , 'London', 'England');
+
+=============================================================================================================================================================================
+
