@@ -1,0 +1,20 @@
+1.Select all the fields available in the table.
+
+SELECT *
+FROM Customers;
+===================================================================================================
+
+2.Select the "CustomerName" and "City" columns from the "Customers" table:
+
+SELECT CustomerName, City, Country
+FROM Customers;
+
+===================================================================================================
+
+3.Select ALL (including the duplicates) values from the "Country" column in the "Customers" table:
+
+SELECT Country
+FROM Customers;
+
+===================================================================================================
+
