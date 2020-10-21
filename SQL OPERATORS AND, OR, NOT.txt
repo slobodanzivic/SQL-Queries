@@ -1,0 +1,50 @@
+1.The following SQL statement selects all fields from "Customers" where country is "Germany" AND city is "Berlin":
+
+SELECT *
+FROM Customers
+WHERE Country = 'Germany' AND City = 'Berlin';
+
+===================================================================================================================================
+
+2.The following SQL statement selects all fields from "Customers" where city is "Berlin" OR "München":
+
+SELECT *
+FROM Customers
+WHERE City = 'Berlin' OR City ='München';
+
+===================================================================================================================================
+
+3.The following SQL statement selects all fields from "Customers" where country is "Germany" OR "Spain":
+
+SELECT *
+FROM Customers
+WHERE Country = 'Germany' OR Country = 'Spain';
+
+===================================================================================================================================
+
+4.The following SQL statement selects all fields from "Customers" where country is NOT "Germany":
+
+SELECT *
+FROM Customers
+WHERE NOT Country = 'Germany';
+
+===================================================================================================================================
+
+5.The following SQL statement selects all fields from "Customers" where country is "Germany" AND city must be "Berlin" OR "München"
+
+SELECT *
+FROM Customers
+WHERE Country = 'Germany' AND (City='Berlin' OR City = 'München');
+
+===================================================================================================================================
+
+6.The following SQL statement selects all fields from "Customers" where country is NOT "Germany" and NOT "USA":
+
+SELECT *
+FROM Customers
+WHERE NOT Country ='Germany' AND NOT Country ='USA';
+
+===================================================================================================================================
+ 
+
+
