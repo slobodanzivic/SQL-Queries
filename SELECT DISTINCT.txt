@@ -1,0 +1,20 @@
+1.Select ALL (including the duplicates) values from the "Country" column in the "Customers" table:
+
+SELECT DISTINCT Country
+FROM Customers;
+
+==================================================================================================
+
+2.The following SQL statement lists the number of different (distinct) customer countries:
+
+SELECT COUNT (DISTINCT Country)
+FROM Customers;
+
+==================================================================================================
+
+3.The following SQL statement lists the number of different (distinct) customer countries:
+
+SELECT Count (*) AS DistinctCountries
+FROM (SELECT DISTINCT Country FROM Customers);
+
+==================================================================================================
