@@ -1,0 +1,26 @@
+1.The following SQL statement finds the number of products:
+
+SELECT COUNT(ProductID)
+FROM Products;
+
+Note: NULL values are not counted.
+
+====================================================================================================================
+
+2.The following SQL statement finds the average price of all products:
+
+SELECT AVG(Price)
+FROM Products;
+
+Note: NULL values are ignored.
+
+====================================================================================================================
+
+3.The following SQL statement finds the sum of the "Quantity" fields in the "OrderDetails" table:
+
+SELECT SUM(Quantity)
+FROM OrderDetails;
+
+Note: NULL values are ignored.
+
+====================================================================================================================
