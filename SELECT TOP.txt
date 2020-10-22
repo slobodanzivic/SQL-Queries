@@ -1,0 +1,37 @@
+1.The following SQL statement selects the first three records from the "Customers" table:
+
+SELECT TOP 3 *
+FROM Customers;
+
+=========================================================================================================================
+
+2.he following SQL statement shows the equivalent example using the LIMIT clause (for MySQL):
+
+SELECT *
+FROM Customers
+LIMIT 3;
+
+=========================================================================================================================
+
+3.The following SQL statement shows the equivalent example using ROWNUM (for Oracle):
+
+SELECT * FROM Customers
+WHERE ROWNUM <= 3;
+
+=========================================================================================================================
+
+4.The following SQL statement selects the first 50% of the records from the "Customers" table 
+
+SELECT TOP 50 PERCENT *
+FROM Customers;
+
+=========================================================================================================================
+
+5.The following SQL statement selects the first three records from the "Customers" table, where the country is "Germany":
+
+SELECT TOP 3 *
+FROM Customers
+WHERE Country = 'Germany';
+
+=========================================================================================================================
+
