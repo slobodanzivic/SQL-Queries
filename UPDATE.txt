@@ -1,0 +1,27 @@
+1.The following SQL statement updates the first customer (CustomerID = 1) with a new contact person and a new city.
+
+UPDATE Customers
+SET CustomerName = 'Novak Djokovic', City = 'Belgrade'
+WHERE CustomerID = 1;
+
+==================================================================================================================
+
+2.The following SQL statement will update the contactname to "Juan" for all records where country is "Mexico":
+[UPDATE Multiple Records]
+
+UPDATE Customers
+SET ContactName = 'Juan'
+WHERE Country = 'Mexico';
+
+==================================================================================================================
+
+3.Update Warning!
+
+UPDATE Customers
+SET ContactName = 'Slobodan';
+
+NOTE:
+
+Be careful when updating records. If you omit the WHERE clause, ALL records will be updated!
+
+==================================================================================================================
