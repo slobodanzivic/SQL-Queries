@@ -1,0 +1,14 @@
+1.The following SQL statement finds the price of the cheapest product:
+
+SELECT MIN(Price) AS SmallestPrice
+FROM Products;
+
+====================================================================================================
+
+2.The following SQL statement finds the price of the most expensive product:
+
+SELECT MAX(Price) AS LargestPrice
+FROM Products;
+
+====================================================================================================
+
