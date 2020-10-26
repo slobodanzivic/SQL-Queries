@@ -1,0 +1,71 @@
+1.Одредите све купце који су из Немачке, Француске, Бразила и Америке, додатни услов је
+да купци не смеју бити из следећих градова: Bern, Buenos Aires, São Paulo.
+Приказати назив, адресу, град и државу купаца. Сортирати резултате тако да државе буду
+сортиране у растућем редоследу, док називи купаца буду у опадајућем редоследу.
+
+
+SELECT Customers.CustomerName, Customers.Address, Customers.City, Customers.Country
+FROM Customers
+where Customers.Country IN ('Germany', 'France','Brazil', 'USA') AND Customers.City NOT IN ('Bern', 'Buenos Aires', 'São Paulo' )
+ORDER BY Customers.Country asc, Customers.CustomerName desc;
+
+-------------------------------------------------------------------------------------------------------------
+
+2.Приказати ИД наруџбинe и земљe одакле су купци. Уредити табелу по земљи одакле је
+купац.
+
+select Orders.OrderID, Customers.CustomerName, Customers.Country
+from Customers
+inner join Orders on
+Customers.CustomerID = Orders.CustomerID
+order by Customers.Country;
+
+------------------------------------------------------------------------------------------------------------
+
+3.Одредите све купце који су из Немачке, али нису из Минхена или Берлина
+
+SELECT Customers.CustomerName, Customers.City, Customers.Country
+FROM Customers
+where Customers.Country = 'Germany' AND Customers.City NOT IN ('München' , 'Berlin');
+
+-----------------------------------------------------------------------------------------------------------
+
+4.Одредити коју пошту /Shippers/ користe купци из Француске и Ирске приликом наруџбина.
+Приказати све колоне и уредити приказ по имену купца
+
+
+SELECT *
+from Customers
+inner join Orders on
+Customers.CustomerID = Orders.CustomerID
+inner join Shippers on
+Orders.ShipperID = Shippers.ShipperID
+where Customers.country in ('France', 'Ireland')
+order by Customers.CustomerName;
+
+-----------------------------------------------------------------------------------------------------------
+
+5.Приказити из којих категорија су производи који се пакују у теглама и флашама.
+Сортирати по категорији производа.
+
+
+SELECT Categories.CategoryID, Categories.CategoryName, Products.Unit
+from Categories
+inner join Products on
+Categories.CategoryID = Products.CategoryID
+where Products.unit like '%jar%' or Products.unit like '%bottle%'
+order by Categories.CategoryID;
+
+-----------------------------------------------------------------------------------------------------------
+
+5.1.Колико таквих производа има?
+
+SELECT COUNT (*) 
+from Categories
+inner join Products on
+Categories.CategoryID = Products.CategoryID
+where Products.unit like '%jar%' or Products.unit like '%bottle%';
+
+
+-----------------------------------------------------------------------------------------------------------
+
