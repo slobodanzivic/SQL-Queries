@@ -1,0 +1,29 @@
+SQL INNER JOIN Keyword
+
+The INNER JOIN keyword selects records that have matching values in both tables.
+
+INNER JOIN Syntax
+
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+=======================================================================================================================
+
+1.The following SQL statement selects all orders with customer information:
+
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+=======================================================================================================================
+
+2.[JOIN Three Tables] The following SQL statement selects all orders with customer and shipper information:
+
+SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+FROM ((Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
+
+======================================================================================================================
