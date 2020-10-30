@@ -1,0 +1,69 @@
+The SQL UNION Operator
+
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+Each SELECT statement within UNION must have the same number of columns
+The columns must also have similar data types
+The columns in each SELECT statement must also be in the same order
+
+UNION Syntax
+
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+=======================================================================================================================================================================================
+
+1.The following SQL statement returns the cities (only distinct values) from both the "Customers" and the "Suppliers" table:
+
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;
+
+Note:
+If some customers or suppliers have the same city, each city will only be listed once, because UNION selects only distinct values. Use UNION ALL to also select duplicate values!
+
+=======================================================================================================================================================================================
+
+2.The following SQL statement returns the cities (duplicate values also) from both the "Customers" and the "Suppliers" table:
+
+SELECT City FROM Customers
+UNION ALL
+SELECT City FROM Suppliers
+ORDER BY City;
+
+
+=======================================================================================================================================================================================
+
+3.The following SQL statement returns the German cities (only distinct values) from both the "Customers" and the "Suppliers" table:
+
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+
+=======================================================================================================================================================================================
+
+4.The following SQL statement returns the German cities (duplicate values also) from both the "Customers" and the "Suppliers" table:
+
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION ALL
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+
+=======================================================================================================================================================================================
+
+5.The following SQL statement lists all customers and suppliers:
+
+SELECT 'Customer' AS Type, ContactName, City, Country
+FROM Customers
+UNION
+SELECT 'Supplier', ContactName, City, Country
+FROM Suppliers;
+
+=======================================================================================================================================================================================
