@@ -1,0 +1,39 @@
+The SQL INSERT INTO SELECT Statement
+
+The INSERT INTO SELECT statement copies data from one table and inserts it into another table.
+
+INSERT INTO SELECT requires that data types in source and target tables match
+The existing records in the target table are unaffected
+
+INSERT INTO SELECT Syntax
+
+Copy all columns from one table to another table:
+
+INSERT INTO table2
+SELECT * FROM table1
+WHERE condition;
+
+=========================================================================================================================================================================================
+
+1.The following SQL statement copies "Suppliers" into "Customers" (the columns that are not filled with data, will contain NULL):
+
+INSERT INTO Customers (CustomerName, City, Country)
+SELECT SupplierName, City, Country FROM Suppliers;
+
+=========================================================================================================================================================================================
+
+2.The following SQL statement copies "Suppliers" into "Customers" (fill all columns):
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+SELECT SupplierName, ContactName, Address, City, PostalCode, Country FROM Suppliers;
+
+========================================================================================================================================================================================
+
+3.The following SQL statement copies only the German suppliers into "Customers":
+
+INSERT INTO Customers (CustomerName, City, Country)
+SELECT SupplierName, City, Country FROM Suppliers
+WHERE Country='Germany';
+
+========================================================================================================================================================================================
+
